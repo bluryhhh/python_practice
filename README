@@ -1,37 +1,14 @@
-# python practice 
+# todays progress - 28 oct
 
-just learning python rn and trying to understand how stuff actually works instead of js memorizing things.
+today i upgraded my basic signup system in python and learned some new concepts.
 
-## what ive learnt so far
+- learned how to create and use functions with `def`
+- used `.strip()` to remove extra spaces from usernames
+- used `len()` to check password length
+- learned how `return` stops a function from continuing
+- used `!=` to compare passwords and check if they match
+- added username validation to stop empty usernames
+- added password length validation and password confirmation
+- organized the signup logic into a reusable function
 
-- variables — storing values and using them later
-- input and print** — taking input from the user and displaying stuff
-- if, elif and else — making decisions based on conditions
-- dictionaries — storing data using keys and values
-- lists — keeping multiple values in one place
-- sets — storing unique values without duplicates
-- checking values — seeing if a username exists in a dictionary
-- nested dictionaries — storing more information inside a user account
-- basic authentication logic — making a simple signup system that stores usernames and passwords, then checking login details
-
-## what im working on
-
-currently trying to make a basic account system using python.
-
-the idea is pretty simple:
-- enter a username and password
-- create an account if the username doesnt already exist
-- stop duplicate usernames
-- check login details
-- show if the login was successful or not
-
-## whats next
-
-- loops
-- functions
-- making the program run through a menu
-- saving user data so it doesnt disappear when the program closes
-- making some small projects to actually practice everything
-
-still learning so the code is probably not the cleanest rn but thats kinda the point lol. gotta start somewhere 💀
-
+next step is making usernames case-insensitive and improving the account system more.
