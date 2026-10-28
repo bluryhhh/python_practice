@@ -12,3 +12,6 @@ if newUser in users:
     print("username exists")
 else:
     print("username doesnt exists")
+
+if  "razi" in users:
+    print("logged in")
