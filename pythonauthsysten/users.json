@@ -1,0 +1,19 @@
+{
+    "razi": {
+        "username": "razi",
+        "password": "razi123",
+        "email": "bluryhh@gmail.com"
+    },
+    "ali": {
+        "username": "ali",
+        "password": "123"
+    },
+    "ramzan": {
+        "username": "ramzan",
+        "password": "123"
+    },
+    "bilal": {
+        "username": "bilal",
+        "password": "1234"
+    }
+}
