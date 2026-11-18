@@ -1,10 +1,20 @@
 import json
+file_path = "/Users/pl/work/python/practice/pythonauthsysten/users.json"
+
+try: 
+ with open(file_path, "r") as file:
+  users = json.load(file)
+except FileNotFoundError: 
+   print("file not found, creating a new database")
+   users = {}
+except json.JSONDecodeError:
+ print("database is corrupted")
+ users = ()
+   
 
 
-with open("/Users/pl/work/python/practice/pythonauthsysten/users.json", "r") as file:
-   users = json.load(file)
 
-
+  
 
 
 def signup():
@@ -20,7 +30,7 @@ def signup():
             "username": username,
             "password": password
         }
-    with open("/Users/pl/work/python/practice/pythonauthsysten/users.json", "w") as file: 
+    with open(file_path, "w") as file: 
      json.dump(users, file, indent=4)
     print("user successfuly created")
 
@@ -30,36 +40,50 @@ def login():
         currentpass = input("enter ur password: ")
 
         if currentpass == users[currentuser]["password"]: 
-         changepass = input("would you like to change your password, enter yes or no: ")
+                changepass = input("would you like to change your password, enter yes or no: ")
 
-         if changepass == "yes":
-            oldpass = input("enter ur old password: ")
+                if changepass == "yes":
+                    oldpass = input("enter ur old password: ")
 
-            if oldpass == users[currentuser]["password"]:
-               newpass = input("enter ur new password: ")
-               users[currentuser]["password"] = newpass
+                    if oldpass == users[currentuser]["password"]:
+                     newpass = input("enter ur new password: ")
+                     users[currentuser]["password"] = newpass
 
-               
+                    
 
-               print("successfuly logged in, would u like to enter an email aswell? (optional): ")
-            else: print("wrong password")
-         decision = input("write yes or no: ")
-         if decision == "yes":
+                print("successfuly logged in, would u like to enter an email aswell? (optional): ")
 
-            email = input("enter ur email: ")
-            users[currentuser]["email"] = email
+                decision = input("write yes or no: ")
+                if decision == "yes":
 
-         elif decision == "no":
-            print("no problem, enjoy")
+                    email = input("enter ur email: ")
+                    users[currentuser]["email"] = email
+
+                elif decision == "no":
+                    print("no problem, enjoy")
 
         else: 
-            print("password is incorrect")
+             print("password is incorrect")
 
     else: 
-      print("user does not exist") 
+      print("user does not exist")
 
-    
+while True:
+    print("1 for login")
+    print("2 for signup")
+    print("3 for exit")
 
-signup()
-login() 
-print(users)
+    choice = input("")
+
+    if choice == "1":
+        login()
+
+    elif choice == "2":
+        signup()
+
+    elif choice == "3":
+        print("program ended")
+        break
+
+    else:
+        print("false choice")
